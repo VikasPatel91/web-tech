@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Results</title>
+    <script>
+      var data = [
+        { Name: "TV", Category: "Electronics" },
+        { Name: "Mobile", Category: "Electronics" },
+        { Name: "Shirt", Category: "Fashion" },
+        { Name: "Nike Casuals", Category: "Footwear" },
+      ];
+      function bodyload() {
+        var str = location.search;
+        var term = str.substring(str.indexOf("=") + 1);
+        var products = data.filter(function (product) {
+          return product.Category == term;
+        });
+        var lstProducts = document.getElementById("lstProducts");
+        for (var item of products) {
+          var li = document.createElement("li");
+          li.innerHTML = item.Name;
+          lstProducts.appendChild(li);
+        }
+      }
+    </script>
+  </head>
+  <body onload="bodyload()">
+    <h2>Search Results</h2>
+    <ol id="lstProducts"></ol>
+  </body>
+</html>

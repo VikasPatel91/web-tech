@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css">
+        <link rel="stylesheet" href="../Fonts/css/all.css">
+        <script>
+            var pics = [{Name:"JBL Speaker", Photo:"speaker.jpg"}, {Name:"Earpods", Photo: "earpods.jpg"}, {Name:"Nike Casuals", Photo: "shoe.jpg"}, {Name:"Lee Cooper Boot", Photo:"shoe1.jpg"}, {Name:"Shirt", Photo:"shirt.jpg"}, {Name:"Jeans", Photo:"jeans.jpg"}];
+            function ShowImage(index){
+                document.getElementById("pic").src= pics[index].Photo;
+                document.getElementById("lblName").innerHTML = pics[index].Name;
+            }
+            var count=0;
+            function SlideShow(){
+                count++;
+                ShowImage(count);
+                document.getElementById("slider").value = count;
+            }
+            function bodyload(){
+                ShowImage(0);
+            }
+            function PlayClick(){
+               document.getElementById("msg").innerHTML="Slide Show - Playing";
+               window.show = setInterval(SlideShow,5000);
+               if(count>=pics.length){
+                 clearInterval(show);
+               }
+            }
+            function PauseClick(){
+                document.getElementById("msg").innerHTML="Slide Show - Paused";
+                clearInterval(show);
+            }
+            function ChangeImage(){
+                var sliderValue = document.getElementById("slider").value;
+                ShowImage(sliderValue);
+            }
+        </script>
+    </head>
+    <body class="container-fluid" onload="bodyload()">
+        <div class="card">
+            <div class="card-header text-center">
+                <h3 id="msg"></h3>
+            </div>
+            <div class="card-body text-center">
+                <img id="pic" width="60%" height="300">
+                <div>
+                    <h4 id="lblName"></h4>
+                </div>
+                <div>
+                    <input onchange="ChangeImage()" min="0" max="5" type="range" id="slider" value="0">
+                </div>
+            </div>
+            <div class="card-footer text-center">
+                <button onclick="PlayClick()" class="btn btn-outline-success">
+                    <span class="fa fa-play-circle"></span>
+                </button>
+                <button onclick="PauseClick()" class="btn btn-outline-danger">
+                    <span class="fa fa-pause-circle"></span>
+                </button>
+            </div>
+        </div>
+    </body></html>

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Example of CSS Sprite</title>
+    <style>
+      .sprite {
+        background: url("spritesheet.png") no-repeat;
+      }
+      .ie {
+        width: 1000px; /* Icon width */
+        height: 1000px; /* Icon height */
+        display: inline-block; /* Display icon as inline block */
+        background-position: 0 -200px; /* Icon background position in sprite */
+      }
+    </style>
+  </head>
+  <body>
+    <span class="sprite ie"></span>
+  </body>
+</html>

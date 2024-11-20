@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Dynamic List</title>
+        <script>
+            var data = [
+                {Category: "Electronics", Products:["JBL Speaker", "Earpods"]},
+                {Category: "Footwear", Products: ["Nike Casuals", "Lee Cooper Boot"]},
+                {Category: "Fashion", Products: ["Watch", "Shirt", "Jeans"]}
+            ];
+            function bodyload(){
+                var lstCategories = document.getElementById("lstCategories");
+                for(var item of data)
+                {
+                    var parentLi = document.createElement("li");
+                    parentLi.innerHTML = item.Category;
+                    lstCategories.appendChild(parentLi);
+                    for(var product of item.Products)
+                    {
+                        var ul = document.createElement("ul");
+                        var childLi = document.createElement("li");
+                        childLi.innerHTML = product;
+                        ul.appendChild(childLi);
+                    parentLi.appendChild(ul);
+                    }
+                }
+            }
+        </script>
+    </head>
+    <body onload="bodyload()">
+        <ol id="lstCategories">
+
+        </ol>
+    </body>
+</html>

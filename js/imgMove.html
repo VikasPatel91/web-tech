@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script>
+      function Animate(e) {
+        var flag = document.getElementById("flag");
+        flag.style.position = "fixed";
+        flag.style.left = e.clientX + "px";
+        flag.style.top = e.clientY + "px";
+      }
+    </script>
+  </head>
+  <body onmousemove="Animate(event)">
+    <div style="height: 1000px"></div>
+    <img
+      id="flag"
+      src="/html/js/pexels-photo-1450360.jpeg"
+      width="505"
+      height="503"
+    />
+  </body>
+</html>

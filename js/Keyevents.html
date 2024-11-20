@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="../Fonts/css/all.css" />
+    <link
+      rel="stylesheet"
+      href="../node_modules/bootstrap/dist/css/bootstrap.css"
+    />
+    <script>
+      function VerifyCaps(e) {
+        var error = document.getElementById("error");
+        if (e.keyCode >= 65 && e.keyCode <= 90) {
+          error.style.display = "block";
+        } else {
+          error.style.display = "none";
+        }
+      }
+    </script>
+  </head>
+  <body class="container-fluid">
+    <fieldset>
+      <legend>Password</legend>
+      <input
+        onkeypress="VerifyCaps(event)"
+        type="password"
+        id="txtPwd"
+        class="form-control"
+      />
+      <div id="error" style="display: none">
+        <span class="fa fa-exclamation-triangle text-warning"></span>
+        <span class="text-warning">Caps is ON.</span>
+      </div>
+    </fieldset>
+  </body>
+</html>

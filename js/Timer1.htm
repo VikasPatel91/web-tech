@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Time</title>
+        <style>
+            .container{
+                width: 600px;
+                justify-content: center;
+                align-items: center;
+                margin: auto;
+                text-align: center;
+            }
+            body{
+                font-family: Arial;
+            }
+        </style>
+        <script>
+            function GetTime(){
+                var now = new Date();
+                document.getElementById("time").innerHTML = now.toLocaleTimeString();
+            }
+            function bodyload(){
+                window.time = setInterval(GetTime,1000);
+            }
+            function StopClick(){
+                clearInterval(time);
+            }
+            function StartClick(){
+                bodyload();
+            }
+        </script>
+    </head>
+    <body onload="bodyload()">
+        <div class="container">
+            <h1 id="time"></h1>
+            <button onclick="StopClick()">Stop</button>
+            <button onclick="StartClick()">Start</button>
+        </div>
+    </body>
+</html>

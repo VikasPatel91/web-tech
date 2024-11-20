@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link
+      rel="stylesheet"
+      href="../node_modules/bootstrap/dist/css/bootstrap.css"
+    />
+    <style>
+      .row {
+        margin: 30px;
+        height: 100px;
+      }
+      div {
+        color: white;
+        text-align: center;
+      }
+    </style>
+    <script>
+      function GetColor(obj) {
+        document.getElementById("msg").style.color = obj.id;
+      }
+    </script>
+  </head>
+  <body class="container-fluid">
+    <h2>Color Panel</h2>
+    <div class="row">
+      <div
+        onmousemove="GetColor(this)"
+        id="red"
+        class="col-3"
+        style="background-color: red"
+      >
+        RED
+      </div>
+      <div
+        onmousemove="GetColor(this)"
+        id="green"
+        class="col-3"
+        style="background-color: green"
+      >
+        GREEN
+      </div>
+      <div
+        onmousemove="GetColor(this)"
+        id="blue"
+        class="col-3"
+        style="background-color: blue"
+      >
+        BLUE
+      </div>
+    </div>
+    <h1 id="msg" align="center">Sample Text</h1>
+  </body>
+</html>

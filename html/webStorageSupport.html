@@ -1,0 +1,55 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h2>Web storage support test</h2>
+    <div id="result"></div>
+    <script>
+      if (typeof Storage !== "undefined") {
+        document.getElementById("result").innerHTML =
+          "hay,your browser supports the web storage";
+      } else {
+        document.getElementById("result").innerHTML =
+          "hay,your browser not supports the web storage";
+      }
+    </script>
+  </body>
+</html> -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h2>Web storage support test</h2>
+    <button onclick="remove()">Remove Items</button>
+    <div id="result"></div>
+    <script>
+      localStorage.setItem("name", "vikku");
+      localStorage.setItem("country", "india");
+      if (typeof Storage !== "undefined") {
+        document.getElementById("result").innerHTML =
+          "it is belongs to " +
+          localStorage.name +
+          " and " +
+          localStorage.country;
+      } else {
+        alert("hay,your browser not supports the web storage");
+      }
+      function remove() {
+        localStorage.removeItem();
+        document.getElementById("result").innerHTML =
+          "it is belongs to " +
+          localStorage.name +
+          " and " +
+          localStorage.country;
+      }
+    </script>
+  </body>
+</html>
